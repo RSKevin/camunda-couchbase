@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.3.0">
+  <bpmn:process id="pre-processing" name="Preprocessing" isExecutable="true">
+    <bpmn:sequenceFlow id="SequenceFlow_0c4zr6d" sourceRef="startEventRequest" targetRef="intermittentTask" />
+    <bpmn:endEvent id="endEventRequest" name="Request Completed">
+      <bpmn:incoming>Flow_0zsgsrl</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:serviceTask id="retriveDocument" name="Retrive Document">
+      <bpmn:extensionElements>
+        <camunda:connector>
+          <camunda:inputOutput>
+            <camunda:inputParameter name="headers">
+              <camunda:map>
+                <camunda:entry key="Content-Type">application/json</camunda:entry>
+              </camunda:map>
+            </camunda:inputParameter>
+            <camunda:inputParameter name="method">GET</camunda:inputParameter>
+            <camunda:inputParameter name="url">http://localhost:8085/api/document/key/${documentKey}</camunda:inputParameter>
+            <camunda:outputParameter name="retrivedDocument">${response}</camunda:outputParameter>
+          </camunda:inputOutput>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1vbokmm</bpmn:incoming>
+      <bpmn:outgoing>Flow_1vzi4pe</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_1vzi4pe" sourceRef="retriveDocument" targetRef="preInsertDocument" />
+    <bpmn:sequenceFlow id="Flow_0zsgsrl" sourceRef="approve" targetRef="endEventRequest" />
+    <bpmn:startEvent id="startEventRequest" name="Request Received">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="documentKey" label="Document Key" type="string" />
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:outgoing>SequenceFlow_0c4zr6d</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_13lxy61" messageRef="Message_19abp4n" />
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="preInsertDocument" name="Pre Insert Document" camunda:class="com.camunda.couchbase.delegate.InsertDocumentDelegate">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="insertData">${retrivedDocument}</camunda:inputParameter>
+          <camunda:outputParameter name="insertedData">${insertedData}</camunda:outputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1vzi4pe</bpmn:incoming>
+      <bpmn:outgoing>Flow_0tchrhl</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_0tchrhl" sourceRef="preInsertDocument" targetRef="verify" />
+    <bpmn:userTask id="intermittentTask" name="Intermittent Task">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:outputParameter name="docKey">${documentKey}</camunda:outputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0c4zr6d</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1vbokmm</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="SequenceFlow_1vbokmm" sourceRef="intermittentTask" targetRef="retriveDocument" />
+    <bpmn:sequenceFlow id="Flow_0sg063y" sourceRef="insertDocument" targetRef="approve" />
+    <bpmn:userTask id="approve" name="Approve">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="input">${inDocument}</camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0sg063y</bpmn:incoming>
+      <bpmn:outgoing>Flow_0zsgsrl</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:serviceTask id="insertDocument" name="Insert Document">
+      <bpmn:extensionElements>
+        <camunda:connector>
+          <camunda:inputOutput>
+            <camunda:inputParameter name="payload">${insertedData}</camunda:inputParameter>
+            <camunda:inputParameter name="headers">
+              <camunda:map>
+                <camunda:entry key="Content-Type">application/json</camunda:entry>
+                <camunda:entry key="Accept">application/json</camunda:entry>
+              </camunda:map>
+            </camunda:inputParameter>
+            <camunda:inputParameter name="method">POST</camunda:inputParameter>
+            <camunda:inputParameter name="url">http://localhost:8085/api/document/upsert</camunda:inputParameter>
+            <camunda:outputParameter name="inDocument">${response}</camunda:outputParameter>
+          </camunda:inputOutput>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_049kplf</bpmn:incoming>
+      <bpmn:outgoing>Flow_0sg063y</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:userTask id="verify" name="Verify">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="verifyData">${insertedData}</camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0tchrhl</bpmn:incoming>
+      <bpmn:outgoing>Flow_049kplf</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_049kplf" sourceRef="verify" targetRef="insertDocument" />
+  </bpmn:process>
+  <bpmn:message id="Message_19abp4n" name="Message_235sr3h" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="pre-processing">
+      <bpmndi:BPMNEdge id="SequenceFlow_1vbokmm_di" bpmnElement="SequenceFlow_1vbokmm">
+        <di:waypoint x="350" y="120" />
+        <di:waypoint x="390" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="451.5" y="110" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0tchrhl_di" bpmnElement="Flow_0tchrhl">
+        <di:waypoint x="630" y="120" />
+        <di:waypoint x="660" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0zsgsrl_di" bpmnElement="Flow_0zsgsrl">
+        <di:waypoint x="1030" y="120" />
+        <di:waypoint x="1072" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1vzi4pe_di" bpmnElement="Flow_1vzi4pe">
+        <di:waypoint x="490" y="120" />
+        <di:waypoint x="530" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0c4zr6d_di" bpmnElement="SequenceFlow_0c4zr6d">
+        <di:waypoint x="209" y="120" />
+        <di:waypoint x="250" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="198.5" y="110" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0sg063y_di" bpmnElement="Flow_0sg063y">
+        <di:waypoint x="890" y="120" />
+        <di:waypoint x="930" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_049kplf_di" bpmnElement="Flow_049kplf">
+        <di:waypoint x="760" y="120" />
+        <di:waypoint x="790" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_17fp5lr_di" bpmnElement="startEventRequest">
+        <dc:Bounds x="173" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="146" y="138" width="90" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_11fud4o_di" bpmnElement="intermittentTask">
+        <dc:Bounds x="250" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_0m5ho94_di" bpmnElement="retriveDocument">
+        <dc:Bounds x="390" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_02rc2k0_di" bpmnElement="preInsertDocument">
+        <dc:Bounds x="530" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0bfvow0_di" bpmnElement="verify">
+        <dc:Bounds x="660" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_1i5bz86_di" bpmnElement="endEventRequest">
+        <dc:Bounds x="1072" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1063" y="148" width="54" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_03oju9f_di" bpmnElement="approve">
+        <dc:Bounds x="930" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_03e9qf7_di" bpmnElement="insertDocument">
+        <dc:Bounds x="790" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
