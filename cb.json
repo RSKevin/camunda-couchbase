@@ -1,222 +1,222 @@
 [
   {
-    "equitypm-tst": {
+    "asOfDate": "2020-10-21",
+    "availableCash": 213230.28,
+    "availableCashBps": 4.44,
+    "dateTimeChanged": "20201022060217",
+    "fundName": "PORTFOLIO EAVUS",
+    "fundNumber": 221140000,
+    "fundShortName": "EAVUS",
+    "id": "portfolioSummary::221140000",
+    "key": {
       "asOfDate": "2020-10-21",
-      "availableCash": 213230.28,
-      "availableCashBps": 4.44,
-      "dateTimeChanged": "20201022060217",
       "fundNumber": 221140000,
-      "fundShortName": "EAVUS",
-      "key": {
-        "asOfDate": "2020-10-21",
-        "fundNumber": 221140000,
-        "runId": 1
-      },
-      "lastUpdatedBy": "PRSIBTCH",
-      "netAssets": 480371120.71,
-      "openBuyOrderDflt": 0,
-      "openSellOrderDflt": 0,
-      "portProjPosBps": 9989.16,
-      "posAdjFactor": 1.0006409,
-      "type": "portfolioSummary"
-    }
+      "runId": 1
+    },
+    "lastUpdatedBy": "PRSIBTCH",
+    "netAssets": 480371120.71,
+    "openBuyOrderDflt": 0,
+    "openSellOrderDflt": 0,
+    "portProjPosBps": 9989.16,
+    "posAdjFactor": 1.0006409,
+    "type": "portfolioSummary"
   },
   {
-    "equitypm-tst": {
+    "asOfDate": "2020-10-21",
+    "availableCash": 130401.92,
+    "availableCashBps": 3.62,
+    "dateTimeChanged": "20201022060218",
+    "fundName": "PORTFOLIO EAVDE",
+    "fundNumber": 221160000,
+    "fundShortName": "EAVDE",
+    "id": "portfolioSummary::221160000",
+    "key": {
       "asOfDate": "2020-10-21",
-      "availableCash": 130401.92,
-      "availableCashBps": 3.62,
-      "dateTimeChanged": "20201022060218",
       "fundNumber": 221160000,
-      "fundShortName": "EAVDE",
-      "key": {
-        "asOfDate": "2020-10-21",
-        "fundNumber": 221160000,
-        "runId": 1
-      },
-      "lastUpdatedBy": "PRSIBTCH",
-      "netAssets": 360046212.02,
-      "openBuyOrderDflt": 2611472.49,
-      "openSellOrderDflt": 468.29,
-      "portProjPosBps": 10062.5,
-      "posAdjFactor": 0.9934287,
-      "type": "portfolioSummary"
-    }
+      "runId": 1
+    },
+    "lastUpdatedBy": "PRSIBTCH",
+    "netAssets": 360046212.02,
+    "openBuyOrderDflt": 2611472.49,
+    "openSellOrderDflt": 468.29,
+    "portProjPosBps": 10062.5,
+    "posAdjFactor": 0.9934287,
+    "type": "portfolioSummary"
   },
   {
-    "equitypm-tst": {
+    "asOfDate": "2020-10-21",
+    "availableCash": 202286.25,
+    "availableCashBps": 7.7,
+    "dateTimeChanged": "20201022060218",
+    "fundName": "PORTFOLIO EAVEM",
+    "fundNumber": 221180000,
+    "fundShortName": "EAVEM",
+    "id": "portfolioSummary::221180000",
+    "key": {
       "asOfDate": "2020-10-21",
-      "availableCash": 202286.25,
-      "availableCashBps": 7.7,
-      "dateTimeChanged": "20201022060218",
       "fundNumber": 221180000,
-      "fundShortName": "EAVEM",
-      "key": {
-        "asOfDate": "2020-10-21",
-        "fundNumber": 221180000,
-        "runId": 1
-      },
-      "lastUpdatedBy": "PRSIBTCH",
-      "netAssets": 262689478.29,
-      "openBuyOrderDflt": 0,
-      "openSellOrderDflt": 0,
-      "portProjPosBps": 10003.12,
-      "posAdjFactor": 0.9989179,
-      "type": "portfolioSummary"
-    }
+      "runId": 1
+    },
+    "lastUpdatedBy": "PRSIBTCH",
+    "netAssets": 262689478.29,
+    "openBuyOrderDflt": 0,
+    "openSellOrderDflt": 0,
+    "portProjPosBps": 10003.12,
+    "posAdjFactor": 0.9989179,
+    "type": "portfolioSummary"
   },
   {
-    "equitypm-tst": {
+    "asOfDate": "2020-10-21",
+    "availableCash": 203052.75,
+    "availableCashBps": 5.23,
+    "dateTimeChanged": "20201022060218",
+    "fundName": "PORTFOLIO EAVUV",
+    "fundNumber": 221190000,
+    "fundShortName": "EAVUV",
+    "id": "portfolioSummary::221190000",
+    "key": {
       "asOfDate": "2020-10-21",
-      "availableCash": 203052.75,
-      "availableCashBps": 5.23,
-      "dateTimeChanged": "20201022060218",
       "fundNumber": 221190000,
-      "fundShortName": "EAVUV",
-      "key": {
-        "asOfDate": "2020-10-21",
-        "fundNumber": 221190000,
-        "runId": 1
-      },
-      "lastUpdatedBy": "PRSIBTCH",
-      "netAssets": 388593795.75,
-      "openBuyOrderDflt": 0,
-      "openSellOrderDflt": 0,
-      "portProjPosBps": 9987.45,
-      "posAdjFactor": 1.0007338,
-      "type": "portfolioSummary"
-    }
+      "runId": 1
+    },
+    "lastUpdatedBy": "PRSIBTCH",
+    "netAssets": 388593795.75,
+    "openBuyOrderDflt": 0,
+    "openSellOrderDflt": 0,
+    "portProjPosBps": 9987.45,
+    "posAdjFactor": 1.0007338,
+    "type": "portfolioSummary"
   },
   {
-    "equitypm-tst": {
+    "asOfDate": "2020-10-21",
+    "availableCash": 164390.81,
+    "availableCashBps": 5.68,
+    "dateTimeChanged": "20201022060218",
+    "fundName": "PORTFOLIO EAVDV",
+    "fundNumber": 221200000,
+    "fundShortName": "EAVDV",
+    "id": "portfolioSummary::221200000",
+    "key": {
       "asOfDate": "2020-10-21",
-      "availableCash": 164390.81,
-      "availableCashBps": 5.68,
-      "dateTimeChanged": "20201022060218",
       "fundNumber": 221200000,
-      "fundShortName": "EAVDV",
-      "key": {
-        "asOfDate": "2020-10-21",
-        "fundNumber": 221200000,
-        "runId": 1
-      },
-      "lastUpdatedBy": "PRSIBTCH",
-      "netAssets": 289441259.81,
-      "openBuyOrderDflt": 0,
-      "openSellOrderDflt": 0,
-      "portProjPosBps": 10067.24,
-      "posAdjFactor": 0.9927568,
-      "type": "portfolioSummary"
-    }
+      "runId": 1
+    },
+    "lastUpdatedBy": "PRSIBTCH",
+    "netAssets": 289441259.81,
+    "openBuyOrderDflt": 0,
+    "openSellOrderDflt": 0,
+    "portProjPosBps": 10067.24,
+    "posAdjFactor": 0.9927568,
+    "type": "portfolioSummary"
   },
   {
-    "equitypm-tst": {
+    "asOfDate": "2020-10-21",
+    "availableCash": 176739.62,
+    "availableCashBps": 33.31,
+    "dateTimeChanged": "20201022060218",
+    "fundName": "PORTFOLIO VUSEQ",
+    "fundNumber": 225640000,
+    "fundShortName": "VUSEQ",
+    "id": "portfolioSummary::225640000",
+    "key": {
       "asOfDate": "2020-10-21",
-      "availableCash": 176739.62,
-      "availableCashBps": 33.31,
-      "dateTimeChanged": "20201022060218",
       "fundNumber": 225640000,
-      "fundShortName": "VUSEQ",
-      "key": {
-        "asOfDate": "2020-10-21",
-        "fundNumber": 225640000,
-        "runId": 1
-      },
-      "lastUpdatedBy": "PRSIBTCH",
-      "netAssets": 53063751.04,
-      "openBuyOrderDflt": 0,
-      "openSellOrderDflt": 0,
-      "portProjPosBps": 9960.47,
-      "posAdjFactor": 1.0006244,
-      "type": "portfolioSummary"
-    }
+      "runId": 1
+    },
+    "lastUpdatedBy": "PRSIBTCH",
+    "netAssets": 53063751.04,
+    "openBuyOrderDflt": 0,
+    "openSellOrderDflt": 0,
+    "portProjPosBps": 9960.47,
+    "posAdjFactor": 1.0006244,
+    "type": "portfolioSummary"
   },
   {
-    "equitypm-tst": {
+    "asOfDate": "2020-10-21",
+    "availableCash": 125969.5,
+    "availableCashBps": 24.85,
+    "dateTimeChanged": "20201022060218",
+    "fundName": "PORTFOLIO VINTLEQ",
+    "fundNumber": 225660000,
+    "fundShortName": "VINTLEQ",
+    "id": "portfolioSummary::225660000",
+    "key": {
       "asOfDate": "2020-10-21",
-      "availableCash": 125969.5,
-      "availableCashBps": 24.85,
-      "dateTimeChanged": "20201022060218",
       "fundNumber": 225660000,
-      "fundShortName": "VINTLEQ",
-      "key": {
-        "asOfDate": "2020-10-21",
-        "fundNumber": 225660000,
-        "runId": 1
-      },
-      "lastUpdatedBy": "PRSIBTCH",
-      "netAssets": 50695632.75,
-      "openBuyOrderDflt": 0,
-      "openSellOrderDflt": 0,
-      "portProjPosBps": 10040.07,
-      "posAdjFactor": 0.9935346,
-      "type": "portfolioSummary"
-    }
+      "runId": 1
+    },
+    "lastUpdatedBy": "PRSIBTCH",
+    "netAssets": 50695632.75,
+    "openBuyOrderDflt": 0,
+    "openSellOrderDflt": 0,
+    "portProjPosBps": 10040.07,
+    "posAdjFactor": 0.9935346,
+    "type": "portfolioSummary"
   },
   {
-    "equitypm-tst": {
+    "asOfDate": "2020-10-21",
+    "availableCash": 144267.38,
+    "availableCashBps": 28.44,
+    "dateTimeChanged": "20201022060218",
+    "fundName": "PORTFOLIO VEMKTEQ",
+    "fundNumber": 225670000,
+    "fundShortName": "VEMKTEQ",
+    "id": "portfolioSummary::225670000",
+    "key": {
       "asOfDate": "2020-10-21",
-      "availableCash": 144267.38,
-      "availableCashBps": 28.44,
-      "dateTimeChanged": "20201022060218",
       "fundNumber": 225670000,
-      "fundShortName": "VEMKTEQ",
-      "key": {
-        "asOfDate": "2020-10-21",
-        "fundNumber": 225670000,
-        "runId": 1
-      },
-      "lastUpdatedBy": "PRSIBTCH",
-      "netAssets": 50725982.98,
-      "openBuyOrderDflt": 0,
-      "openSellOrderDflt": 0,
-      "portProjPosBps": 9982.31,
-      "posAdjFactor": 0.9989226,
-      "type": "portfolioSummary"
-    }
+      "runId": 1
+    },
+    "lastUpdatedBy": "PRSIBTCH",
+    "netAssets": 50725982.98,
+    "openBuyOrderDflt": 0,
+    "openSellOrderDflt": 0,
+    "portProjPosBps": 9982.31,
+    "posAdjFactor": 0.9989226,
+    "type": "portfolioSummary"
   },
   {
-    "equitypm-tst": {
+    "asOfDate": "2020-10-21",
+    "availableCash": 163308.11,
+    "availableCashBps": 19.7,
+    "dateTimeChanged": "20201022060218",
+    "fundName": "PORTFOLIO VUSSCV",
+    "fundNumber": 225680000,
+    "fundShortName": "VUSSCV",
+    "id": "portfolioSummary::225680000",
+    "key": {
       "asOfDate": "2020-10-21",
-      "availableCash": 163308.11,
-      "availableCashBps": 19.7,
-      "dateTimeChanged": "20201022060218",
       "fundNumber": 225680000,
-      "fundShortName": "VUSSCV",
-      "key": {
-        "asOfDate": "2020-10-21",
-        "fundNumber": 225680000,
-        "runId": 1
-      },
-      "lastUpdatedBy": "PRSIBTCH",
-      "netAssets": 82883432.5,
-      "openBuyOrderDflt": 0,
-      "openSellOrderDflt": 0,
-      "portProjPosBps": 9974.27,
-      "posAdjFactor": 1.0006047,
-      "type": "portfolioSummary"
-    }
+      "runId": 1
+    },
+    "lastUpdatedBy": "PRSIBTCH",
+    "netAssets": 82883432.5,
+    "openBuyOrderDflt": 0,
+    "openSellOrderDflt": 0,
+    "portProjPosBps": 9974.27,
+    "posAdjFactor": 1.0006047,
+    "type": "portfolioSummary"
   },
   {
-    "equitypm-tst": {
+    "asOfDate": "2020-10-21",
+    "availableCash": 170762.24,
+    "availableCashBps": 40.62,
+    "dateTimeChanged": "20201022060218",
+    "fundName": "PORTFOLIO VINTLSCV",
+    "fundNumber": 225690000,
+    "fundShortName": "VINTLSCV",
+    "id": "portfolioSummary::225690000",
+    "key": {
       "asOfDate": "2020-10-21",
-      "availableCash": 170762.24,
-      "availableCashBps": 40.62,
-      "dateTimeChanged": "20201022060218",
       "fundNumber": 225690000,
-      "fundShortName": "VINTLSCV",
-      "key": {
-        "asOfDate": "2020-10-21",
-        "fundNumber": 225690000,
-        "runId": 1
-      },
-      "lastUpdatedBy": "PRSIBTCH",
-      "netAssets": 42038779.73,
-      "openBuyOrderDflt": 0,
-      "openSellOrderDflt": 0,
-      "portProjPosBps": 10031.11,
-      "posAdjFactor": 0.9928492,
-      "type": "portfolioSummary"
-    }
+      "runId": 1
+    },
+    "lastUpdatedBy": "PRSIBTCH",
+    "netAssets": 42038779.73,
+    "openBuyOrderDflt": 0,
+    "openSellOrderDflt": 0,
+    "portProjPosBps": 10031.11,
+    "posAdjFactor": 0.9928492,
+    "type": "portfolioSummary"
   }
 ]
